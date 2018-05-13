@@ -7,7 +7,7 @@ module Players
       if !board.taken?(5)
         move = "5"
 
-      elsif !board.taken?(9)
+      elsif board.turn_count == 9
         move = "9"
 
 
