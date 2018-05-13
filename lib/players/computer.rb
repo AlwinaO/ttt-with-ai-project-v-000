@@ -13,7 +13,7 @@ module Players
       elsif board.turn_count == 4
         move = [1, 3, 7, 9].detect { |m| !board.taken?(m)}.to_s
 
-      elsif board.turn_count == 6 && (board.position(4) == board.position(5) )
+      elsif board.turn_count == 6 && (board.position(4) == board.position(6) || board.position(2) == board.position(8))
 
 
       end
