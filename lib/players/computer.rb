@@ -21,6 +21,11 @@ module Players
 
           if comp.select{|i| board.position(i+1) == token}.size == 2 && comp.any?{|i| board.position(i+1) == " "}
             move = comp.select{|i| !board.taken?(i+1)}.first.to_i.+(1).to_s
+
+          elsif cmb.select{|i| board.position(i+1) != " " && board.position(i+1) != token}.size == 2 && cmb.any?{|i| board.position(i+1) == " "}
+            move = cmb.select{|i| !board.taken?(i+1)}.first.to_i.+(1).to_s
+          end
+
         end
 
 
