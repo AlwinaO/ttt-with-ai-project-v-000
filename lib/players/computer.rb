@@ -10,6 +10,10 @@ module Players
       elsif board.turn_count == 9
         move = "9"
 
+      elsif board.turn_count == 4
+        move = [1, 3, 7, 9].detect { |m| !board.taken?(m)}.to_s
+
+
 
       end
     end
