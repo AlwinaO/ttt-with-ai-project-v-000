@@ -18,8 +18,9 @@ module Players
 
       else
         Game::WIN_COMBINATIONS.detect do |comp|
-          if comp.select{|i| board.position(i+1) == token}.size == 2 && cmb.any?{|i| board.position(i+1) == " "}
-            move = cmb.select{|i| !board.taken?(i+1)}.first.to_i.+(1).to_s
+
+          if comp.select{|i| board.position(i+1) == token}.size == 2 && comp.any?{|i| board.position(i+1) == " "}
+            move = comp.select{|i| !board.taken?(i+1)}.first.to_i.+(1).to_s
         end
 
 
