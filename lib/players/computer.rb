@@ -11,7 +11,7 @@ module Players
         move = "9"
 
       elsif board.turn_count == 4
-        move = [1, 3, 7, 9].detect { |m| !board.taken?(m)}.to_s
+        move = [1, 3, 7, 9].detect { |t| !board.taken?(m)}.to_s
 
       elsif board.turn_count == 6 && (board.position(4) == board.position(6) || board.position(2) == board.position(8))
         move = "6"
@@ -27,7 +27,11 @@ module Players
           end
         end
 
+        move = [1, 3, 7, 9, 2, 4, 6, 8].detect { |t| !board.taken?(i)}.to_s if move == nil
+
       end
+      move
+      
     end
 
   end
